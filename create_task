@@ -13,13 +13,13 @@ on run argv
 
 	tell application "OmniFocus"
 		tell default document
-			tell quick entry
+			--tell quick entry
 				set theTask to make new inbox task with properties {name:theName, note:theNote}
 				select {theTask}
-				set note expanded of tree 1 to true
+				set note of theTask to theNote
 				open
-				tell application "System Events" to keystroke tab
-			end tell
+				--tell application "System Events" to keystroke tab
+			--end tell
 		end tell
 	end tell
 end run
